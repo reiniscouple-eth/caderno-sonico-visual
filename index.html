@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caderno Sônico-Visual</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/addons/p5.sound.min.js"></script>
+    <style>
+        /* Estilos básicos para remover margens e garantir que o canvas ocupe a tela inteira */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Evita barras de rolagem */
+            height: 100%;
+            background-color: #000; /* Fundo preto para a página */
+            display: flex; /* Usado para centralizar a mensagem inicial */
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            color: #fff;
+        }
+        canvas {
+            display: block; /* Remove espaço extra abaixo do canvas */
+        }
+        /* Estilo para a mensagem de interação inicial */
+        #start-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            z-index: 10; /* Garante que fique sobre o canvas */
+        }
+        /* Esconde a mensagem se o JS conseguir escondê-la */
+        body.audio-started #start-message {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="start-message">
+        <h1>Caderno Sônico-Visual</h1>
+        <p>Clique ou toque para iniciar a experiência e permitir o uso do microfone.</p>
+    </div>
+
+    <script src="sketch.js"></script>
+</body>
+</html>
